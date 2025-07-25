@@ -1,12 +1,12 @@
 public class UserService {
-    private Logger logger;
 
-    public UserService(Logger logger) {
-        this.logger = logger;
+    private UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {  // ✅ Add this constructor
+        this.userRepository = userRepository;
     }
 
-    public void createUser(String username) {
-        // pretend we're creating a user
-        logger.log("User created: " + username);
+    public User getUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
     }
 }

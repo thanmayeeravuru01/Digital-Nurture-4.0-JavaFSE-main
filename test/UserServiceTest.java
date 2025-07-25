@@ -1,20 +1,38 @@
-import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Test;
+import java.util.Optional;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UserServiceTest {
 
     @Test
-    public void testVoidMethodCalled() {
-        // 1. Create mock
-        Logger mockLogger = mock(Logger.class);
+    public void testGetUserById_returnsUser() {
+        UserRepository mockRepo = mock(UserRepository.class);
 
-        // 2. Inject into service
-        UserService service = new UserService(mockLogger);
+        User user = new User(1L, "Thanmayee");
 
-        // 3. Call method
-        service.createUser("thanmayee");
+        when(mockRepo.findById(1L)).thenReturn(Optional.of(user));
 
-        // 4. Verify the void method was called with the correct message
-        verify(mockLogger).log("User created: thanmayee");
+        UserService service = new UserService(mockRepo);
+
+        User result = service.getUserById(1L);
+
+        assertNotNull(result);
+        assertEquals(1L, result.getId());
+        assertEquals("Thanmayee", result.getName());
+    }
+
+    @Test
+    public void testGetUserById_returnsNullWhenNotFound() {
+        UserRepository mockRepo = mock(UserRepository.class);
+
+        when(mockRepo.findById(2L)).thenReturn(Optional.empty());
+
+        UserService service = new UserService(mockRepo);
+
+        User result = service.getUserById(2L);
+
+        assertNull(result);
     }
 }
