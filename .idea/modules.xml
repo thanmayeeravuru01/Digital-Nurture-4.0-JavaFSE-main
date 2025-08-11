@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/MockitoHandsOn.iml" filepath="$PROJECT_DIR$/MockitoHandsOn.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/JUnitDemo.iml" filepath="$PROJECT_DIR$/JUnitDemo.iml" />
+>>>>>>> import-junitdemo
     </modules>
   </component>
 </project>
