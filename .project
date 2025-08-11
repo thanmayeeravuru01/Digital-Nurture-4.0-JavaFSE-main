@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>DSAConcepts</name>
+=======
+	<name>DesignPatterns</name>
+>>>>>>> import-design-patterns
 	<comment></comment>
 	<projects>
 	</projects>
