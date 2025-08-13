@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+*.orig
+*~
+=======
+*.log
+logs/
+# Ignore all .log files
+*.log
+
+# Ignore log folder
+log/
+>>>>>>> bebdf546ffff9bfccc302195dbdcf58bd707f96f
