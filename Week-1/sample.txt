@@ -1,0 +1,2 @@
+Welcome to File Handling in Java!
+This is the second line.
